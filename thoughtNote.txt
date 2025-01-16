@@ -1,0 +1,82 @@
+Project Name: NextJs-Store
+Description: A NextJs 14 E-Commerse application
+Author: Aditya Chaudhary
+Mentor: John Smilga
+
+* Tech-Stack used.
+
+* // Dependencies 
+• NextJs(14.2.3)
+• use-debounce
+• axios
+• Zod
+• react-share
+• embla-carousel-react
+• react-icons
+• react
+• react-dom
+
+* Development dependencies
+• clcx
+• clerk
+• Supabase
+• prisma
+• faker
+• Shadcn
+• TailwindCSS
+• Typescript
+• Stripe
+
+
+
+
+
+
+------------------------------  Dependency vs devDependency -------------------------------------
+
+The distinction between dependencies and devDependencies revolves around when and how the package is used during the lifecycle of your application:
+
+• Dependencies:
+
+Purpose: 
+These are the core libraries and tools your application needs to run in production.
+Install Location: These are included in the build and are required when the app runs in a production environment.
+
+Examples in the app:
+next, react, and react-dom: Core for rendering the app.
+@prisma/client: Needed to query the database in production.
+@stripe/react-stripe-js: For payment integration at runtime.
+
+• DevDependencies:
+
+Purpose: 
+These are tools and libraries used only during development and testing. They are not needed for the app to run in production.
+
+Install Location:
+These packages are excluded when deploying the app to production.
+
+Examples in the app:
+typescript: For development and static type checking.
+eslint and eslint-config-next: For maintaining code quality during development.
+@faker-js/faker: To generate mock data for testing or development.
+
+♠ Key Difference:
+
+* Dependencies: Required by the app to function correctly for end users.
+* DevDependencies: Required only during the development phase, such as building, testing, and linting.
+
+Example Scenario:
+You use TailwindCSS to style your app. Here's how its components fit:
+tailwindcss (devDependency): Needed during development to generate styles.
+The generated CSS files (output from TailwindCSS) are used in production, not the library itself.
+
+Practical Notes:
+Production Deployment: Run npm install --production or npm ci --production to install only dependencies.
+
+⚠ Warning: Incorrect Placement: If you mistakenly place a devDependency in dependencies, your app's production bundle may grow unnecessarily.
+
+⏸ Common Rule of Thumb:
+
+If the library is required during runtime, it goes in dependencies.
+If it's used during development or build time only, it goes in devDependencies.
+
