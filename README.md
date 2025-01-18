@@ -2,7 +2,7 @@
 
 ```sh
 
-npx create-next-app@14 store
+npx create-next-app@latest store
 ```
 
 ```sh
@@ -51,9 +51,44 @@ function AboutPage() {
 export default AboutPage;
 ```
 
-### Starter
+### Shadcn/ui
 
-Starter already has shadcn installed and configured. 👍
+[Docs](https://ui.shadcn.com/)
+
+[Next Install](https://ui.shadcn.com/docs/installation/next)
+
+```sh
+npx shadcn-ui@latest init
+
+```
+
+- New York
+- Zinc
+- CSS variables:YES
+
+```sh
+npx shadcn-ui@latest add button
+```
+
+```tsx
+import { Button } from '@/components/ui/button';
+
+function HomePage() {
+  return (
+    <div>
+      <h1 className='text-3xl'>HomePage</h1>
+      <Button variant='outline' size='lg' className='capitalize m-8'>
+        Click me
+      </Button>
+    </div>
+  );
+}
+export default HomePage;
+```
+
+```sh
+npx shadcn-ui@latest add breadcrumb card checkbox dropdown-menu input label popover select separator table textarea toast skeleton carousel
+```
 
 - components
   - ui
